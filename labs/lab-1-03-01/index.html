@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form practice</title>
+    <script src="./app.js" defer></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+   
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+        *{
+            font-family: "roboto";
+            color: rgb(255,255,255);
+            
+        }
+        body {
+            background:  rgb(25, 33, 41);
+        }
+        .form1{
+            width: 250px;
+            border: 2px rgb(67,163,230) solid;
+            padding: 10px 5px 10px 10px;
+            margin: 10% 10%;           
+
+        }
+        .name{
+            font-size: 24px;
+        }
+        #age {
+            font-size: 24px;
+        }
+        .submit-button {
+            background-color: rgb(67, 163, 230);
+            border-radius: 50px;
+        }
+        #name {
+            color: black;
+        }
+        #mail {
+            color: black;
+        }
+        #bands {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <form action="" class="form1">
+        <label class="name" for="name">Name</label> <br>
+        <input type="text" placeholder="Type your full name" id="name" size="30px"> <br>
+        <label id="email" for="mail">Mail</label><br>
+        <input type="email" placeholder="example@example.com" id="mail" size="30px> <br>
+        <label for="bands">Comment:</label><br>
+        <textarea cols="30" rows="10" placeholder="Type here" id="bands"></textarea> <br>
+        <label for="check-box">Recieve email updates?</label>
+        <input type="checkbox">
+        <br>
+        <button class="submit-button" onclick="console.log('Submitted')">Submit</button>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
