@@ -1,0 +1,13 @@
+.padre {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hijo {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    font-size: 20px;
+}
