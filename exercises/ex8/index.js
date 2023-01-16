@@ -15,4 +15,5 @@ console.log(b==c);
 console.log(b===c);
 console.log(b!==c);
 console.log(b>=7);
-console.log(b<=3);
+console.log(b===c);
+console.log( a===b || b<=3);
