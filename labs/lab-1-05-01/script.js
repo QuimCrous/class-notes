@@ -24,7 +24,7 @@ for (let i=0; i< hackerOne.length; i++) {
   hacker_capital += hackerOne[i].toUpperCase() + " ";
 };
 
-console.log(hacker_capital);
+console.log(hacker_capital.trim());
 
 for (let i=0; i< hackerTwo.length; i++) {
   hackerTwo_reverse += hackerTwo[hackerTwo.length-1-i];

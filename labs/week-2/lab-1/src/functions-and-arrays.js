@@ -1,12 +1,14 @@
 // Iteration #1: Find the maximum
 function maxOfTwoNumbers(num1, num2) {
-  if (num1 > num2) {
-    return num1;
-  } else if (num1 < num2) {
-    return num2;
-  } else {
-    return num1;
-  }
+  return num1 > num2 ? num1 : num2 > num1 ? num2 : num1;
+
+  // if (num1 > num2) {
+  //   return num1;
+  // } else if (num1 < num2) {
+  //   return num2;
+  // } else {
+  //   return num1;
+  // }
 }
 
 
@@ -210,14 +212,15 @@ const matrix = [
 
 function greatestProduct(arr) {
   //sinceramente he hecho un copia y pega XD
-  let n = 5;
+  let nRows = arr.length;
+  let nCols = arr[0].length;
   let max = 0, result;
  
         // iterate the rows.
-        for (let i = 0; i < n; i++)
+        for (let i = 0; i < nRows; i++)
         {
             // iterate the columns.
-            for (let j = 0; j < n; j++)
+            for (let j = 0; j < nCols; j++)
             {
                 // check the maximum product
                 // in horizontal row.
