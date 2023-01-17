@@ -1,14 +1,14 @@
 // Ex 1 - Crea un for loop que cuente de 0 a 100 i en cada iteración sume el valor actual a un resultado total. Al final haz un console.log que printee el resultado
 let resultado = 0;
 for (let index = 0; index < 100; index++) {
-    resultado++;    
+    resultado+=index;    
 }
 
 console.log(resultado);
 console.log("====================");
 // Ex 2 - Crea un array de números llamado "numbers" con valores aleatorios. Utiliza un for loop para recorrer el array y encontrar el número mayor y el número menor. Imprime ambos números en la consola.
 
-const numbers = [10,-8,25,30,-19,157,-2];
+const numbers = [10,-8,25,30,-19,157,-2,5000000];
 let max = numbers[0];
 let min = numbers[0];
 
@@ -40,13 +40,13 @@ console.log("====================");
 
 let numeroAdivinar = parseInt(prompt("Enter a number between 1 and 10:"));
 let numeroIngresado = 0;
-let counter2 = 0;
+let counterTwo = 0;
 const numberArray = [1,2,3,4,5,6,7,8,9,10];
 
 do {
     numeroIngresado = numberArray[numeroIngresado];
     console.log(numeroIngresado);
-    counter2++;
+    counterTwo++;
 } while (numeroIngresado!=numeroAdivinar);
 
-console.log(counter2);
+console.log(counterTwo);

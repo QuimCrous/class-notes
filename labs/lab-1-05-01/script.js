@@ -27,7 +27,7 @@ for (let i=0; i< hackerOne.length; i++) {
 console.log(hacker_capital);
 
 for (let i=0; i< hackerTwo.length; i++) {
-  hackerTwo_reverse += hackerTwo[hackerTwo.length-1-i] + " ";
+  hackerTwo_reverse += hackerTwo[hackerTwo.length-1-i];
 };
 
 console.log(hackerTwo_reverse);
@@ -54,6 +54,8 @@ console.log(count2);
 
 let frase1 = "patata atatap";
 let frase2 = "";
+
+frase1.replace()
 
 for (let i=0; i<frase1.length;i++){
   frase2 += frase1[frase1.length-1-i];
