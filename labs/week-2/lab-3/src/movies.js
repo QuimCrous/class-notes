@@ -13,14 +13,15 @@ function getAllDirectors(moviesArray) {
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
 function howManyMovies(moviesArray) {
+    
     let counter = 0;
     moviesArray.forEach(element => {
-        if (element.director === "Steven Spielberg" &&
-        element.genre.includes("Drama")){
-            counter++;
-        }
-    });
-    return counter;
+         if (element.director === "Steven Spielberg" &&
+         element.genre.includes("Drama")){
+             counter++;
+         }
+     });
+     return counter;
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
@@ -28,8 +29,9 @@ function scoresAverage(moviesArray) {
     if (moviesArray.length === 0) return 0;
     let sum = 0;
     moviesArray.forEach(element => {
-        element.score ? sum+=element.score : sum+=0
+    element.score ? sum+=element.score : sum+=0
     })
+
     return Math.round((sum/moviesArray.length)*100)/100;
 }
 
@@ -79,7 +81,64 @@ function orderAlphabetically(moviesArray) {
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes(moviesArray) {}
+function turnHoursToMinutes(moviesArray) {
+
+    const copyArray = moviesArray.map(a => ({...a}));
+
+    let parseMinute = (time) => {
+        let re = /(\d+)h\s+(\d+)min/;
+        let match = re.exec(time);
+        let hours = parseInt(match[1]);
+        let minutes = parseInt(match[2]);
+        return (hours * 60) + minutes;
+    }
+    let parseMinuteTwo = (time) => {
+        let re = /(\d+)h/;
+        let match = re.exec(time);
+        let hours = parseInt(match[1]);
+        return (hours * 60);
+    }    
+    
+    for (let i=0; i < copyArray.length; i++){
+        if (copyArray[i].duration.includes("m")){
+            copyArray[i].duration = parseMinute(copyArray[i].duration);
+        } else {
+            copyArray[i].duration = parseMinuteTwo(copyArray[i].duration);
+        }
+    }
+    
+    return copyArray;
+        
+}
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
-function bestYearAvg(moviesArray) {}
+function bestYearAvg(moviesArray) {
+    if (moviesArray.length === 0) return null;
+    
+    let proba = {};
+    let proba2 = {};
+    moviesArray.forEach((mov) => {
+      if (proba[mov.year]) {
+        proba[mov.year] += mov.score;
+        proba2[mov.year] ++;
+      } else {
+        proba[mov.year] = mov.score;
+        proba2[mov.year] = 1;
+      }
+    })
+
+    for (let year in proba){
+        proba[year] = proba[year]/proba2[year];
+    }
+    
+    let bestYear = null;
+    let bestScore = 0;
+    for (let year in proba){
+        if (proba[year] > bestScore){
+            bestYear = year;
+            bestScore = proba[year];
+        }
+    }
+
+    return `The best year was ${bestYear} with an average score of ${bestScore}`;
+}
