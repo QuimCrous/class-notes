@@ -115,28 +115,28 @@ function turnHoursToMinutes(moviesArray) {
 function bestYearAvg(moviesArray) {
     if (moviesArray.length === 0) return null;
     
-    let proba = {};
-    let proba2 = {};
+    let movies = {};
+    let moviesCounter = {};
     moviesArray.forEach((mov) => {
-      if (proba[mov.year]) {
-        proba[mov.year] += mov.score;
-        proba2[mov.year] ++;
+      if (movies[mov.year]) {
+        movies[mov.year] += mov.score;
+        moviesCounter[mov.year] ++;
       } else {
-        proba[mov.year] = mov.score;
-        proba2[mov.year] = 1;
+        movies[mov.year] = mov.score;
+        moviesCounter[mov.year] = 1;
       }
     })
 
-    for (let year in proba){
-        proba[year] = proba[year]/proba2[year];
+    for (let year in movies){
+        movies[year] = movies[year]/moviesCounter[year];
     }
     
     let bestYear = null;
     let bestScore = 0;
-    for (let year in proba){
-        if (proba[year] > bestScore){
+    for (let year in movies){
+        if (movies[year] > bestScore){
             bestYear = year;
-            bestScore = proba[year];
+            bestScore = movies[year];
         }
     }
 
