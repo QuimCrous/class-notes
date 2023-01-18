@@ -4,10 +4,9 @@
 
 
 function getAllDirectors(moviesArray) {
-    let newArray = new Array;
-    moviesArray.forEach(element => {
-        newArray.push(element.director)});
-    return newArray;    
+    let newArray = moviesArray.map(element => element.director);
+    const result = [... new Set(newArray)];
+    return result;    
 }
 
 
@@ -29,10 +28,10 @@ function scoresAverage(moviesArray) {
     if (moviesArray.length === 0) return 0;
     let sum = 0;
     moviesArray.forEach(element => {
-    element.score ? sum+=element.score : sum+=0
+        element.score ? sum+=element.score : sum+=0
     })
-
-    return Math.round((sum/moviesArray.length)*100)/100;
+    
+    return Number((sum/moviesArray.length).toFixed(2));
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
@@ -41,15 +40,24 @@ function dramaMoviesScore(moviesArray) {
     if (moviesArray.length === 0) return 0;
     let sum = 0;
     let divisor = 0;
+    const array = moviesArray.filter((element) => element.genre.includes("Drama")).map((element) => element.score);
+    if (array.length === 0)return 0;
+    sum = array.reduce((acc, vrc) => acc+vrc, sum);
+    console.log(array);
+    console.log(sum/array.length);
 
-    moviesArray.forEach(element => {
-        (element.genre.includes("Drama")) ? sum+=element.score : sum+=0
-    })
-    moviesArray.forEach(element => {
-        (element.genre.includes("Drama")) ? divisor++ : divisor+=0
-    })
-    if (divisor === 0) return 0;
-    return Math.round((sum/divisor)*100)/100; 
+    
+
+    // moviesArray.forEach(element => {
+    //     (element.genre.includes("Drama")) ? sum+=element.score : sum+=0
+    // })
+    // moviesArray.forEach(element => {
+    //     (element.genre.includes("Drama")) ? divisor++ : divisor+=0
+    // })
+    // if (divisor === 0) return 0;
+    //return Math.round((sum/divisor)*100)/100; 
+    
+    return Number((sum/array.length).toFixed(2));
 }
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
