@@ -1,0 +1,15 @@
+.green-box {
+    background-color: green;
+    height: 100px;
+    width: 100px;
+}
+
+.class2 {
+    background-color: red;
+}
+
+.remove-class {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}
