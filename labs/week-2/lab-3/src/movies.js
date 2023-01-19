@@ -20,6 +20,7 @@ function howManyMovies(moviesArray) {
              counter++;
          }
      });
+    
      return counter;
 }
 
@@ -39,23 +40,9 @@ function dramaMoviesScore(moviesArray) {
     
     if (moviesArray.length === 0) return 0;
     let sum = 0;
-    let divisor = 0;
     const array = moviesArray.filter((element) => element.genre.includes("Drama")).map((element) => element.score);
     if (array.length === 0)return 0;
     sum = array.reduce((acc, vrc) => acc+vrc, sum);
-    console.log(array);
-    console.log(sum/array.length);
-
-    
-
-    // moviesArray.forEach(element => {
-    //     (element.genre.includes("Drama")) ? sum+=element.score : sum+=0
-    // })
-    // moviesArray.forEach(element => {
-    //     (element.genre.includes("Drama")) ? divisor++ : divisor+=0
-    // })
-    // if (divisor === 0) return 0;
-    //return Math.round((sum/divisor)*100)/100; 
     
     return Number((sum/array.length).toFixed(2));
 }
@@ -82,10 +69,9 @@ function orderByYear(moviesArray) {
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 function orderAlphabetically(moviesArray) {
-    let copyArray = moviesArray.map((element) => element);
-    let result = copyArray.sort((elementOne, elementTwo) => elementOne.title > elementTwo.title ? 1 : -1);
-    let copyResult = result.map((element) => element.title);
-    return copyResult.slice(0,20);
+    let copyArray = moviesArray.map((element) => element.title);
+    let result = copyArray.sort((elementOne, elementTwo) => elementOne > elementTwo ? 1 : -1);
+    return result.slice(0,20);
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
