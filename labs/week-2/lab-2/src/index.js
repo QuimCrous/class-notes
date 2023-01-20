@@ -55,17 +55,44 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  console.log("patata");
+  
   const text = document.querySelector(".create-product").querySelectorAll("input")[0].value;
   const quantity = document.querySelector(".create-product").querySelectorAll("input")[1].value;
-  console.log(text);
-  console.log(quantity);
   const table = document.querySelector("tbody");
-  console.log(table);
-  let productRow = table.insertRow().classList.add("product");
+  
+  let productRow = table.insertRow();
+  productRow.classList.add("product");
+  
   let cellOne = productRow.insertCell();
-  //cellOne.classList.add("name");
-  //cellOne.innerHTML = `<span>${text}</span>`
+  cellOne.classList.add("name");
+  cellOne.innerHTML = `<span>${text}</span>`;
+
+  let cellTwo = productRow.insertCell();
+  cellTwo.classList.add("price");
+  cellTwo.innerHTML = `$<span>${quantity}</span>`
+
+  let cellThree = productRow.insertCell();
+  cellThree.classList.add("quantity");
+  cellThree.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`
+
+  let cellFour = productRow.insertCell();
+  cellFour.classList.add("subtotal");
+  cellFour.innerHTML = `$<span>0</span>`
+
+  let cellFive = productRow.insertCell();
+  cellFive.classList.add("subtotal");
+  let button = document.createElement("button");
+  button.classList.add("btn");
+  button.classList.add("btn-remove");
+  button.innerText = "Remove";
+  cellFive.appendChild(button);
+  button.addEventListener("click", (e)=> {
+    removeProduct(e);
+  })
+
+  
+
+
 }
 
 window.addEventListener('load', () => {
