@@ -90,9 +90,6 @@ function createProduct() {
     removeProduct(e);
   })
 
-  
-
-
 }
 
 window.addEventListener('load', () => {
