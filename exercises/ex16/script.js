@@ -12,6 +12,8 @@ blastoiser()
 Ejercicio 2:
 Permite al usuario introducir un número entre el 0 y el 151, que son los únicos pokemon que merecen la pena. Devuélvele la info del pokemon con la id correspondiente.
 */
+let title = document.createElement("p");
+document.querySelector("body").appendChild(title);
 
 let searchById = () => {
     let pokemon = document.querySelector("body input").value;
@@ -19,9 +21,8 @@ let searchById = () => {
         console.log(res);
         let pokemonName = res.species.name;
         console.log(pokemonName);
-        let title = document.createElement("p");
         title.innerText = pokemonName;
-        document.querySelector("body").appendChild(title);
+        
     }).catch((error) => console.log(error)))
 }
 
