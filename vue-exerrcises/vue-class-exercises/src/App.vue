@@ -1,5 +1,6 @@
 <script setup>
 import ExOne from "./components/ExOne.vue";
+import ExTwo from "./components/ExTwo.vue";
 </script>
 
 <template>
@@ -7,7 +8,8 @@ import ExOne from "./components/ExOne.vue";
     <h1>VUE - CLASS - EXERCISES</h1>
   </header>
   <hr />
-  <ExOne />
+  <!-- <ExOne /> -->
+  <ExTwo />
 </template>
 
 <style scoped></style>
