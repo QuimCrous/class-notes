@@ -1,0 +1,14 @@
+{
+  "yes": {
+    "answer": "yey te gusta la pizza",
+    "imgSrc": "https://i.pinimg.com/originals/c3/44/1d/c3441dd7b4a9eb6651ce290801edf70c.jpg"
+  },
+  "no": {
+    "answer": "Que raro eres",
+    "imgSrc": "https://preview.redd.it/cjt67y95c3z61.jpg?width=640&crop=smart&auto=webp&s=a7da0d6c129c3d72b51d5a309b7cd3ec8964a1dd"
+  },
+  "other": {
+    "answer": "contestame bien",
+    "imgSrc": "https://cdn.memegenerator.es/descargar/31914045"
+  }
+}
