@@ -1,8 +1,9 @@
 <!-- HTML HERE -->
 <template>
-  <nav class="navbar navbar-expand-lg bg-primary">
-    <a class="text-white" href="/">Wiki Countries - hard refresh</a>
-    <RouterLink class="text-white" to="/">WIki Countries</RouterLink>
+  <nav class="navbar navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="/">Wiki Countries</a>
+    </div>
   </nav>
 </template>
 <!-- JS HERE -->

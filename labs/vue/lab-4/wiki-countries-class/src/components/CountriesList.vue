@@ -1,25 +1,32 @@
 <!-- HTML HERE -->
 <template>
-  <div class="row">
-    <div class="col-sm-4">
-      <RouterLink
-        v-for="(country, index) in countries"
-        :key="index"
-        :to="`/country/${country.alpha3Code}`"
-      >
-        <div class="container m-4">
-          <h4>{{ country.name.common }}</h4>
-
-          <img
-            :src="`https://flagcdn.com/24x18/${country.alpha2Code.toLowerCase()}.png`"
-            alt=""
-          />
-        </div>
-      </RouterLink>
+  <div class="container my-4">
+    <div class="row" v-if="countries">
+      <div class="col-sm-4">
+        <ul class="list-group">
+          <RouterLink
+            v-for="(country, index) in countries"
+            :key="index"
+            v-bind:to="`/country/${country.alpha3Code}`"
+          >
+            <li
+              class="list-group-item d-flex flex-column justify-content-center align-items-center"
+            >
+              <img
+                v-bind:src="`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`"
+                alt=""
+                class="country-flag mb-2"
+              />
+              <p class="text-center fw-bold text-primary">
+                {{ country.name.common }}
+              </p>
+            </li>
+          </RouterLink>
+        </ul>
+      </div>
+      <div class="col-sm-8"><RouterView /></div>
     </div>
-    <div class="col-sm-8">
-      <RouterView />
-    </div>
+    <div v-else class="col-12"><Spinner text="Loading Countries..." /></div>
   </div>
 </template>
 <!-- JS HERE -->

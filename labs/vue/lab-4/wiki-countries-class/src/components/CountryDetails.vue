@@ -1,23 +1,44 @@
 <!-- HTML HERE -->
 <template>
   <div v-if="countryInfo">
-    <h1 class="text-primary">{{ countryInfo.name.common }}</h1>
-    <p>{{ countryInfo.region }}</p>
     <img
-      :src="`https://flagcdn.com/144x108/${countryInfo.alpha2Code.toLowerCase()}.png`"
-      alt="patat"
+      :src="`https://flagcdn.com/256x192/${countryInfo.alpha2Code.toLowerCase()}.png`"
+      alt=""
+      class="mb-4"
     />
-    <hr />
+    <h2>{{ countryInfo.name.common }}</h2>
+    <ul class="list-group list-group-flush">
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <p class="fw-bold">Capital</p>
 
-    <div v-if="countryInfo.borders.length === 0">
-      <h3>This country is an island.</h3>
-    </div>
-    <div v-else>
-      <h3>Country borders:</h3>
-      <p v-for="(country, index) in countryInfo.borders" :key="index">
-        <RouterLink :to="`/country/${country}`">{{ country }} </RouterLink>
-      </p>
-    </div>
+        <p v-if="countryInfo.capital.length === 0">
+          This country does not have a capital
+        </p>
+        <p v-else>{{ countryInfo.capital[0] }}</p>
+      </li>
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center"
+      >
+        <p class="fw-bold">Area</p>
+        <p>{{ countryInfo.area }}.km<sup>2</sup></p>
+      </li>
+      <li class="list-group-item d-flex justify-content-between flex-column">
+        <p class="fw-bold">Borders:</p>
+        <p v-if="countryInfo.borders.length === 0">
+          This country has no borders.
+        </p>
+        <RouterLink
+          v-else
+          :to="`/country/${border}`"
+          v-for="(border, index) in countryInfo.borders"
+          :key="index"
+        >
+          {{ border }}
+        </RouterLink>
+      </li>
+    </ul>
   </div>
 </template>
 <!-- JS HERE -->
