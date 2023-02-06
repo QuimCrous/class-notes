@@ -4,28 +4,31 @@ import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
+  <div class="patata">
+    <header>
+      <img
+        alt="Vue logo"
+        class="logo"
+        src="@/assets/logo.svg"
+        width="125"
+        height="125"
+      />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <div class="wrapper">
+        <HelloWorld msg="You did it!" />
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/music-band">Music Band</RouterLink>
-        <RouterLink to="/fav-food">Favourite Food</RouterLink>
-      </nav>
+        <nav>
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About</RouterLink>
+          <RouterLink to="/music-band">Music Band</RouterLink>
+          <RouterLink to="/fav-food">Favourite Food</RouterLink>
+        </nav>
+      </div>
+    </header>
+    <div class="estoy-muerta">
+      <RouterView />
     </div>
-  </header>
-
-  <RouterView />
+  </div>
 </template>
 
 <style scoped>
@@ -62,6 +65,10 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+
+.estoy-muerta {
+  width: 80vw;
 }
 
 @media (min-width: 1024px) {
