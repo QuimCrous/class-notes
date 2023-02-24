@@ -25,7 +25,7 @@
         <label for="title">Title</label>
         <input type="text" id="title" v-model="title" />
         <label for="year">Year</label>
-        <input type="text" id="year" v-model="year" /><br />
+        <input type="number" id="year" v-model="year" /><br />
         <label for="streaming">Choose a Streaming platform:</label><br />
         <input
           type="checkbox"
@@ -88,8 +88,8 @@ const watchOnNetflix = computed(() => {
 
 const addSerie = () => {
   myWatchlist.push({
-    title: title,
-    year: year,
+    title: title.value,
+    year: year.value,
     whereToWatch: streaming.streamApp,
   });
   console.log(streaming);

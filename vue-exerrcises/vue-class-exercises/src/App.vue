@@ -9,7 +9,7 @@ import ExTwo from "./components/ExTwo.vue";
   </header>
   <hr />
   <!-- <ExOne /> -->
-  <ExTwo />
+  <!-- <ExTwo /> -->
 </template>
 
 <style scoped></style>

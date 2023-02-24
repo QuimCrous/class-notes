@@ -3,7 +3,7 @@ Ejercicio 1:
 Muestra por consola toda la información de tu pokemon favorito usando la API https://pokeapi.co*/
 
 let blastoiser = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon/9").then((response) => response.json()).then((res) => console.log(res)).catch((err) => console.log(err))
+    fetch("https://pokeapi.co/api/v2/pokemon/9").then((response) => response.json()).then((res) => console.log(res.species.name)).catch((err) => console.log(err))
 }
 
 blastoiser()

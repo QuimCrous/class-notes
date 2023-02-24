@@ -6,6 +6,12 @@ const songsList = useSongsStore().mySongs;
 const songTitle = ref("");
 const addSong = useSongsStore().addSong;
 const cleanSongs = useSongsStore().cleanSongs;
+const clearSongTitle = () => {
+  if (songTitle.value !== "") {
+    addSong(songTitle.value);
+    songTitle.value = "";
+  }
+};
 </script>
 <template>
   <div>Hola desde songs</div>
@@ -24,7 +30,7 @@ const cleanSongs = useSongsStore().cleanSongs;
     <div class="sm-container-two">
       <label for="title">Escribe el título de la canción a añadir:</label>
       <input type="text" id="title" v-model="songTitle" />
-      <button @click.prevent="addSong(songTitle)">
+      <button @click.prevent="clearSongTitle">
         Click para añadir la canción!
       </button>
       <button @click.prevent="cleanSongs">Click para vaciar la lista</button>

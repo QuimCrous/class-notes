@@ -27,3 +27,15 @@ npm run dev
 ```sh
 npm run build
 ```
+
+#### Estructura de un componente vue v-composition api
+
+<!-- HTML -->
+
+<template></template>
+
+<!-- JS -->
+<script setup></script>
+
+<!-- CSS -->
+<style scoped></style>
